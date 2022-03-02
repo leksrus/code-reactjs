@@ -5,7 +5,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
 import HeadLogo from "../head-logo/HeadLogo";
 
-function NavbarCustom(){
+function NavBar(){
     return (
         <header>
             <Navbar bg="dark" expand="lg" sticky="top" variant="dark">
@@ -41,4 +41,4 @@ function NavbarCustom(){
     );
 }
 
-export default NavbarCustom;
+export default NavBar;
