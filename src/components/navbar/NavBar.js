@@ -3,7 +3,9 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
+import Badge from "react-bootstrap/Badge";
 import HeadLogo from "../head-logo/HeadLogo";
+import './NavBar.css'
 
 function NavBar(){
     return (
@@ -16,7 +18,7 @@ function NavBar(){
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mx-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
+                            <Nav.Link href="#home" active>Home</Nav.Link>
                             <NavDropdown title="Categories" id="products-category-dropdown">
                                 <NavDropdown.Item href="#action/3.1">CPU</NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.2">GPU</NavDropdown.Item>
@@ -31,6 +33,10 @@ function NavBar(){
                             <Nav.Link href="#about">About</Nav.Link>
                         </Nav>
                         <div className="d-flex">
+                            <Nav.Link href="#cart" className="btn btn-outline-warning me-5 position-relative">
+                                <img className="img-cart" src="/images/shopping-cart.png" alt="Cart"/>
+                                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                            </Nav.Link>
                             <Button className="me-3" variant="outline-primary">Sing in</Button>{' '}
                             <Button className="me-3"  variant="outline-success">Sing up</Button>{' '}
                         </div>

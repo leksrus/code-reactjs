@@ -1,4 +1,4 @@
-
+import './HeadLogo.css'
 
 function HeadLogo() {
     return (
