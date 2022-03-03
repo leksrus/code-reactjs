@@ -3,8 +3,8 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
-import Badge from "react-bootstrap/Badge";
 import HeadLogo from "../head-logo/HeadLogo";
+import CartWidget from "../cart-widget/CartWidget"
 import './NavBar.css'
 
 function NavBar(){
@@ -33,12 +33,9 @@ function NavBar(){
                             <Nav.Link href="#about">About</Nav.Link>
                         </Nav>
                         <div className="d-flex">
-                            <Nav.Link href="#cart" className="btn btn-outline-warning me-5 position-relative">
-                                <img className="img-cart" src="/images/shopping-cart.png" alt="Cart"/>
-                                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
-                            </Nav.Link>
+                            <CartWidget/>
                             <Button className="me-3" variant="outline-primary">Sing in</Button>{' '}
-                            <Button className="me-3"  variant="outline-success">Sing up</Button>{' '}
+                            <Button variant="outline-success">Sing up</Button>{' '}
                         </div>
                     </Navbar.Collapse>
                 </Container>
