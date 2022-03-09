@@ -1,4 +1,5 @@
 import Container from "react-bootstrap/Container";
+import ItemCount from "../components/item-count/ItemCount";
 
 function ItemListContainer({title}) {
  return(
@@ -9,7 +10,9 @@ function ItemListContainer({title}) {
                      <em>{title}</em>
                  </h2>
              </div>
+
          </div>
+         <ItemCount/>
      </Container>
  );
 }
