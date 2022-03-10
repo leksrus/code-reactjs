@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import './ItemCount.css'
 
-
 function ItemCount() {
-    const stockItems = 10;
+    const [counter, setCounter] = useState(1);
 
-    const [counter, setCounter] = useState(0);
+    const [stockItems, setStock] = useState(10);
 
     const increase = () => {
         if(counter < stockItems)
@@ -13,10 +12,16 @@ function ItemCount() {
     };
 
     const decrease = () => {
-        if(counter > 0)
+        if(counter > 1)
             setCounter(count => count - 1);
-        else
-            setCounter(0);
+    };
+
+    const onAdd = () => {
+        if(stockItems >= counter){
+            console.log(`Adding to cart items: ${counter}`);
+            setStock(stockItems => stockItems - counter);
+        }
+        else console.log(`Unavalable items ${counter} in stock. Stock left: ${stockItems}`);
     };
 
     return (
@@ -33,11 +38,11 @@ function ItemCount() {
                             <p className="card-text text-center">$190.99</p>
                             <p className="card-text text-center">Intel CPU I5 Series</p>
                             <div className="d-flex align-items-center justify-content-center">
-                                <div className="btn-cart" onClick={increase}>+</div>
+                                <div className="btn-cart noselect" onClick={increase}>+</div>
                                 <div className="count">{counter}</div>
-                                <div className="btn-cart" onClick={decrease}>-</div>
+                                <div className="btn-cart noselect" onClick={decrease}>-</div>
                             </div>
-                            <button className="btn-custom" onClick={increase}>Add to Cart</button>
+                            <button className="btn-custom" onClick={onAdd}>Add to Cart</button>
                         </div>
                     </div>
                 </div>
