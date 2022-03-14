@@ -28,7 +28,7 @@ function ItemListContainer({title}) {
 
          </div>
          <div className="row align-items-start m-3">
-                 {       loading ? <h2>Loading...</h2>
+                 {       loading ? <h2 className="text-center">Loading...</h2>
                      :
                      <ItemList products={products} />
                  }
