@@ -1,4 +1,4 @@
-
+import './Item.css'
 
 function Item({product}) {
     return   (
@@ -10,7 +10,7 @@ function Item({product}) {
                     </div>
                     <div className="card-body">
                         <h5 className="card-title text-center"><b>{product.name}</b></h5>
-                        <p className="card-text text-center">{product.price}</p>
+                        <p className="card-text text-center">$ {product.price}</p>
                         <p className="card-text text-center">{product.description}</p>
                     </div>
                 </div>
