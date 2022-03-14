@@ -1,0 +1,11 @@
+.transition {
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
+    transition: transform 0.2s, -webkit-transform 0.2s;
+}
+
+.transition:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}

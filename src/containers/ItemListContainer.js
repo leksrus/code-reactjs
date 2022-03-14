@@ -1,8 +1,23 @@
 import Container from "react-bootstrap/Container";
 import ItemCount from "../components/item-count/ItemCount";
+import {useEffect, useState} from "react";
+import {getProducts} from "../helpers/getProducts";
+import ItemList from "../components/item-list/ItemList";
 
 function ItemListContainer({title}) {
- return(
+    const [ loading, setLoading ] = useState(true);
+    const [products, setProds ] = useState([]);
+
+    useEffect(()=> {
+            getProducts
+                .then(resp => setProds(resp))
+                .catch(err => console.log(err))
+                .finally(()=> setLoading(false))
+
+    }, [])
+
+
+    return(
      <Container>
          <div className="row align-items-start m-3">
              <div className="col-12">
@@ -12,7 +27,12 @@ function ItemListContainer({title}) {
              </div>
 
          </div>
-         <ItemCount/>
+         <div className="row align-items-start m-3">
+                 {       loading ? <h2>Loading...</h2>
+                     :
+                     <ItemList products={products} />
+                 }
+         </div>
      </Container>
  );
 }
