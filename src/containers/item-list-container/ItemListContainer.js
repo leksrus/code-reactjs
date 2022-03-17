@@ -1,8 +1,7 @@
 import Container from "react-bootstrap/Container";
-import ItemCount from "../components/item-count/ItemCount";
 import {useEffect, useState} from "react";
-import {getProducts} from "../helpers/getProducts";
-import ItemList from "../components/item-list/ItemList";
+import {getProducts} from "../../helpers/getProducts";
+import ItemList from "../../components/item-list/ItemList";
 
 function ItemListContainer({title}) {
     const [ loading, setLoading ] = useState(true);
