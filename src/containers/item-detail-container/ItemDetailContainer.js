@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {getProduct} from "../../helpers/getProduct";
+import {getProducts} from "../../helpers/getProducts";
 import Container from "react-bootstrap/Container";
 import ItemDetail from "../../components/item-detail/ItemDetail";
 
@@ -8,8 +8,8 @@ export function ItemDetailContainer() {
     const [product, setProd ] = useState([]);
 
     useEffect(()=> {
-        getProduct
-            .then(resp => setProd(resp))
+        getProducts
+            .then(resp => setProd(resp.find(x => x.id === 4)))
             .catch(err => console.log(err))
             .finally(()=> setLoading(false))
 
