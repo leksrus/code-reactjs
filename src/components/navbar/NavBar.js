@@ -1,4 +1,5 @@
 import Container from "react-bootstrap/Container";
+import { LinkContainer } from 'react-router-bootstrap'
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
@@ -12,30 +13,53 @@ function NavBar(){
         <header>
             <Navbar bg="dark" expand="lg" sticky="top" variant="dark">
                 <Container fluid>
-                    <Navbar.Brand href="#home">
-                        <HeadLogo/>
-                    </Navbar.Brand>
+                    <LinkContainer to="/">
+                        <Navbar.Brand>
+                            <HeadLogo/>
+                        </Navbar.Brand>
+                    </LinkContainer>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mx-auto">
-                            <Nav.Link href="#home" active>Home</Nav.Link>
+                            <LinkContainer to="/">
+                                <Nav.Link href="#home">Home</Nav.Link>
+                            </LinkContainer>
                             <NavDropdown title="Categories" id="products-category-dropdown">
-                                <NavDropdown.Item href="#action/3.1">CPU</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">GPU</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Memory RAM</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.4">SSD</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.5">Keyboards</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.6">Mouses</NavDropdown.Item>
+                                <LinkContainer to="/category/cpu">
+                                    <NavDropdown.Item href="#action/3.1">CPU</NavDropdown.Item>
+                                </LinkContainer>
+                                <LinkContainer to="/category/memory">
+                                    <NavDropdown.Item href="#action/3.3">Memory RAM</NavDropdown.Item>
+                                </LinkContainer>
+                                <LinkContainer to="/category/ssd">
+                                    <NavDropdown.Item href="#action/3.4">SSD</NavDropdown.Item>
+                                </LinkContainer>
+                                <LinkContainer to="/category/keyboard">
+                                    <NavDropdown.Item href="#action/3.5">Keyboards</NavDropdown.Item>
+                                </LinkContainer>
+                                <LinkContainer to="/category/mouse">
+                                    <NavDropdown.Item href="#action/3.6">Mouses</NavDropdown.Item>
+                                </LinkContainer>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.7">All Products</NavDropdown.Item>
+                                <LinkContainer to="/category/all">
+                                    <NavDropdown.Item href="#action/3.7">All Products</NavDropdown.Item>
+                                </LinkContainer>
                             </NavDropdown>
-                            <Nav.Link href="#contact">Contact</Nav.Link>
-                            <Nav.Link href="#about">About</Nav.Link>
+                            <LinkContainer to="/contact">
+                                <Nav.Link href="#contact">Contact</Nav.Link>
+                            </LinkContainer>
+                            <LinkContainer to="/about">
+                                <Nav.Link href="#about">About</Nav.Link>
+                            </LinkContainer>
                         </Nav>
                         <div className="d-flex">
                             <CartWidget/>
-                            <Button className="me-3" variant="outline-primary">Sing in</Button>{' '}
-                            <Button variant="outline-success">Sing up</Button>{' '}
+                            <LinkContainer to="/signin">
+                                <Button className="me-3" variant="outline-primary">Sing in</Button>
+                            </LinkContainer>
+                            <LinkContainer to="/signout">
+                                <Button variant="outline-success">Sing up</Button>
+                            </LinkContainer>
                         </div>
                     </Navbar.Collapse>
                 </Container>
