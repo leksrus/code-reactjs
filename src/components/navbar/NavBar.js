@@ -22,7 +22,7 @@ function NavBar(){
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mx-auto">
                             <LinkContainer to="/">
-                                <Nav.Link href="#home" active>Home</Nav.Link>
+                                <Nav.Link href="#home">Home</Nav.Link>
                             </LinkContainer>
                             <NavDropdown title="Categories" id="products-category-dropdown">
                                 <LinkContainer to="/category/cpu">
