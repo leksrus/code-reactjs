@@ -19,8 +19,7 @@ function App() {
                 <Route path="/" element={<ItemListContainer title={ "Welcome to home page" } />}/>
                 <Route path="/category/:categoryId" element={<ItemListContainer title={ "Welcome to home page" } />}/>
                 <Route path="/category/all" element={<ItemListContainer title={ "Welcome to home page" } />}/>
-                {/*<Route path='/details/:productId' element={<ItemDetailContainer />}/>*/}
-
+                <Route path='/item-detail/:productId' element={<ItemDetailContainer />}/>
                 <Route path='/contact' element={<Contact />}/>
                 <Route path='/about' element={<About />}/>
                 <Route path='/signin' element={<SignIn />}/>

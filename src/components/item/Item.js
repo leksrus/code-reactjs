@@ -7,7 +7,7 @@ function Item({product}) {
 
                 <div className="card text-dark bg-light mb-5 transition">
                     <div className="d-flex align-items-center justify-content-center">
-                        <Link to={`details/${product.id}`}>
+                        <Link to={`item-detail/${product.id}`}>
                             <img className="card-img-top image-min-height-315" src={product.imgSrc}
                                  alt={product.name}/>
                         </Link>
