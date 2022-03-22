@@ -9,16 +9,17 @@ function App() {
   return (
       <BrowserRouter>
         <div>
+            {/*<NavBar/>*/}
             <Routes>
+                <Route path='/' element={<ItemListContainer title={ "Welcome to home page" } />}/>
                 <Route path='/details/:productId' element={<ItemDetailContainer />}/>
                 {/*<Route path='/cart' element={<Cart />}/>*/}
                 <Route path='/*' element={<Navigate to='/' />} />
 
             </Routes>
 
-            <NavBar/>
-            <ItemListContainer title={ "Welcome to home page" } />
-            <ItemDetailContainer/>
+             {/*<ItemListContainer title={ "Welcome to home page" } />*/}
+             {/*<ItemDetailContainer/>*/}
         </div>
       </BrowserRouter>
   );

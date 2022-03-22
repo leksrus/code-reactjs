@@ -12,9 +12,9 @@ function NavBar(){
         <header>
             <Navbar bg="dark" expand="lg" sticky="top" variant="dark">
                 <Container fluid>
-                    <Navbar.Brand href="#home">
+                    <Navbar.Link href="#home">
                         <HeadLogo/>
-                    </Navbar.Brand>
+                    </Navbar.Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mx-auto">
