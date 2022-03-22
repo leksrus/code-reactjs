@@ -9,10 +9,12 @@ function App() {
   return (
       <BrowserRouter>
         <div>
-            {/*<NavBar/>*/}
+            <NavBar/>
             <Routes>
-                <Route path='/' element={<ItemListContainer title={ "Welcome to home page" } />}/>
-                <Route path='/details/:productId' element={<ItemDetailContainer />}/>
+                <Route path="/" element={<ItemListContainer title={ "Welcome to home page" } />}/>
+                <Route path="/category/:categoryId" element={<ItemListContainer title={ "Welcome to home page" } />}/>
+                {/*<Route path='/details/:productId' element={<ItemDetailContainer />}/>*/}
+
                 {/*<Route path='/cart' element={<Cart />}/>*/}
                 <Route path='/*' element={<Navigate to='/' />} />
 
