@@ -10,14 +10,6 @@ function ItemListContainer({title}) {
 
     const { categoryId } = useParams();
 
-    // useEffect(()=> {
-    //         getProducts
-    //             .then(resp => setProds(resp))
-    //             .catch(err => console.log(err))
-    //             .finally(()=> setLoading(false))
-    //
-    // }, [])
-
     useEffect(()=> {
         if (categoryId) {
             getProducts
