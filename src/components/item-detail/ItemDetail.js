@@ -1,12 +1,15 @@
 import ItemCount from "../item-count/ItemCount";
 import "./ItemDetail.css"
+import ItemCheckout from "../item-checkout/ItemCheckout";
+import {useState} from "react";
 
 
 function ItemDetail({product}) {
-
+    const [isCheckout, setCheckout] = useState(false);
     const onAdd = (counter) => {
         if(product.stock >= counter){
             console.log(counter);
+            setCheckout(true);
         }
     };
     return (
@@ -23,7 +26,8 @@ function ItemDetail({product}) {
                                 <h5 className="card-title text-center"><b>{product.name}</b></h5>
                                 <p className="card-text text-center">${product.price}</p>
                                 <p className="card-text text-center">{product.description}</p>
-                                <ItemCount stock = {product.stock} onAdd = { onAdd} />
+
+                                { isCheckout ? <ItemCheckout/> : <ItemCount stock = {product.stock} onAdd = { onAdd} />}
                             </div>
                         </div>
                     </div>
