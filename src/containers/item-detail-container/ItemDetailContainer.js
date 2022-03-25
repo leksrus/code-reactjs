@@ -11,17 +11,10 @@ export function ItemDetailContainer() {
     const { productId } = useParams();
 
     useEffect(()=> {
-        if (productId) {
-            getProducts
-                .then(resp => setProd(resp.find(x => x.id === parseInt(productId))))
-                .catch(err => console.log(err))
-                .finally(()=> setLoading(false))
-        } else {
-            getProducts
-                .then(resp => setProd(resp))
-                .catch(err => console.log(err))
-                .finally(()=> setLoading(false))
-        }
+        getProducts
+            .then(resp => productId ? setProd(resp.find(x => x.id === parseInt(productId))) : setProd(resp))
+            .catch(err => console.log(err))
+            .finally(()=> setLoading(false));
     }, [productId]);
 
     return(
