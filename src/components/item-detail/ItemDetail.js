@@ -2,13 +2,16 @@ import ItemCount from "../item-count/ItemCount";
 import "./ItemDetail.css"
 import ItemCheckout from "../item-checkout/ItemCheckout";
 import {useState} from "react";
+import {useCartContext} from "../../context/CartContext";
 
 
 function ItemDetail({product}) {
     const [isCheckout, setCheckout] = useState(false);
+    const {addToCart} = useCartContext();
+
     const onAdd = (counter) => {
         if(product.stock >= counter){
-            console.log(counter);
+            addToCart(product, counter);
             setCheckout(true);
         }
     };

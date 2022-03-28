@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import Cart from "../helpers/custom-classes/cart";
 
 const CartContext = createContext([])
 
@@ -8,23 +9,33 @@ export const useCartContext = () => useContext(CartContext)
 
 
 function CartContextProvider({children}) {
-    const [cartList, setCartList] = useState([])
+    const [cart, setCart] = useState( new Cart())
 
-    const addToCart=(item)=>{
-        /// repita duplicado
-        // setCartList( [ ...cartList, item ] )
+    const addToCart = (product, quantity) => {
+        cart.addProductWithQuantity(product, quantity);
+        setCart(cart);
+        console.log(cart.getProducts());
     }
 
-    // const vaciarCarrito= () =>{
-    //     setCartList([])
-    // }
+    const getTotalProductsFromCart = () => {
+       return cart.getProducts().length;
+    }
 
+    const clearCart = () => {
+        setCart(new Cart());
+    }
 
+    const removeProductFromCart = (product) => {
+        cart.removeProduct(product);
+    }
+    
     return (
         <CartContext.Provider value={{
-            cartList,
-            addToCart
-            // vaciarCarrito
+            cart,
+            addToCart,
+            getTotalProductsFromCart,
+            removeProductFromCart,
+            clearCart
         }}>
             { children }
         </CartContext.Provider>
