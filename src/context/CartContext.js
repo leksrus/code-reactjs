@@ -1,37 +1,60 @@
 import { createContext, useContext, useState } from "react";
-import Cart from "../helpers/custom-classes/cart";
 
 const CartContext = createContext([])
-
 export const useCartContext = () => useContext(CartContext)
 
 
-
-
 function CartContextProvider({children}) {
-    const [cart, setCart] = useState( new Cart())
+    const [cartList, setCartList] = useState( [])
 
     const addToCart = (product, quantity) => {
-        cart.addProductWithQuantity(product, quantity);
-        setCart(cart);
-        console.log(cart.getProducts());
+        const cartItem = cartList.find(x => x.id === product.id);
+        const price = product.price * quantity;
+
+        if(cartItem){
+            const cartItems = cartList.filter(x => x.id !== cartItem.id);
+            cartItem.price += price;
+            cartItem.quantity += quantity;
+            cartItems.push(cartItem);
+            setCartList(cartItems);
+        }
+        else setCartList([ ...cartList, Object.assign({}, product, {quantity: quantity, price:  price})]);
+
+        console.log(cartList);
     }
 
     const getTotalProductsFromCart = () => {
-       return cart.getProducts().length;
+        let count = 0;
+        for (const item of cartList) {
+            count += item.quantity;
+        }
+
+        return count;
     }
 
     const clearCart = () => {
-        setCart(new Cart());
+        setCartList([]);
     }
 
     const removeProductFromCart = (product) => {
-        cart.removeProduct(product);
+        const cartItem = cartList.find(x => x.id === product.id);
+
+        if(cartItem){
+            cartItem.quantity -= 1;
+            if(cartItem.quantity > 0) {
+                const cartItems = cartList.filter(x => x.id !== cartItem.id);
+                cartItems.push(cartItem);
+                setCartList(cartItems);
+            }
+            else {
+                setCartList(cartList.filter(x => x.id !== cartItem.id));
+            }
+        }
     }
-    
+
     return (
         <CartContext.Provider value={{
-            cart,
+            cartList,
             addToCart,
             getTotalProductsFromCart,
             removeProductFromCart,
