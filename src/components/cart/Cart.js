@@ -2,7 +2,6 @@ import Button from "react-bootstrap/Button";
 import {useCartContext} from "../../context/CartContext";
 import CartItem from "../cart-item/CartItem";
 import {LinkContainer} from "react-router-bootstrap";
-import Nav from "react-bootstrap/Nav";
 
 function Cart() {
     const {cartList, clearCart, getTotalPrice} = useCartContext();
