@@ -6,7 +6,7 @@ import {useCartContext} from "../../context/CartContext";
 function CartWidget() {
     const {cartList, getTotalProductsFromCart} = useCartContext();
     const quantity = getTotalProductsFromCart();
-    console.log(quantity);
+
     return (
         <LinkContainer to="/cart">
             <Nav.Link href="#cart" className="btn btn-light me-5 position-relative">

@@ -9,18 +9,14 @@ function CartContextProvider({children}) {
 
     const addToCart = (product, quantity) => {
         const cartItem = cartList.find(x => x.id === product.id);
-        const price = product.price * quantity;
 
         if(cartItem){
             const cartItems = cartList.filter(x => x.id !== cartItem.id);
-            cartItem.price += price;
             cartItem.quantity += quantity;
             cartItems.push(cartItem);
             setCartList(cartItems);
         }
-        else setCartList([ ...cartList, Object.assign({}, product, {quantity: quantity, price:  price})]);
-
-        console.log(cartList);
+        else setCartList([ ...cartList, Object.assign({}, product, {quantity: quantity})]);
     }
 
     const getTotalProductsFromCart = () => {
@@ -32,12 +28,22 @@ function CartContextProvider({children}) {
         return count;
     }
 
+    const getTotalPrice = () => {
+        let total = 0.00;
+        for (const item of cartList) {
+            total += item.price * item.quantity;
+        }
+
+        return total;
+    }
+
     const clearCart = () => {
         setCartList([]);
     }
 
-    const removeProductFromCart = (product) => {
-        const cartItem = cartList.find(x => x.id === product.id);
+    const removeProductFromCart = (item) => {
+        console.log(item)
+        const cartItem = cartList.find(x => x.id === item.id);
 
         if(cartItem){
             cartItem.quantity -= 1;
@@ -58,7 +64,8 @@ function CartContextProvider({children}) {
             addToCart,
             getTotalProductsFromCart,
             removeProductFromCart,
-            clearCart
+            clearCart,
+            getTotalPrice
         }}>
             { children }
         </CartContext.Provider>
