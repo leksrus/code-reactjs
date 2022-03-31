@@ -2,7 +2,7 @@
 
 const products = [
     { id: 1, stock: 10, category: 'cpu', name: "CPU I5", price: 150.99   ,imgSrc:'/images/products/cpu-intel-i5.jpg', description: 'CPU I5 Intel' },
-    { id: 2, stock: 10, category: 'mouse', name: "Mouse Redgon", price: 30 ,imgSrc:'/images/products/mouse-redrgon-m711.jpg', description: 'Mouse Redrgon' },
+    { id: 2, stock: 10, category: 'mouse', name: "Mouse Redgon", price: 30.00 ,imgSrc:'/images/products/mouse-redrgon-m711.jpg', description: 'Mouse Redrgon' },
     { id: 3, stock: 10, category: 'memory', name: "Memory HyperX", price: 250.99    ,imgSrc:'/images/products/memory-hyperx.jpg', description: 'Memory HyperX' },
     { id: 4, stock: 10, category: 'mouse', name: "Mouse Redgon", price: 29.99    ,imgSrc:'/images/products/mouse-redrgon-m610.jpg', description: 'Mouse Redragon M610' },
     { id: 5, stock: 10, category: 'keyboard', name: "Keyboard Redragon", price: 25.99 ,imgSrc:'/images/products/keyboard-redragon-k551.jfif', description: 'Keyboard Redragon K551' },
