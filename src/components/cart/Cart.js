@@ -1,6 +1,8 @@
 import Button from "react-bootstrap/Button";
 import {useCartContext} from "../../context/CartContext";
 import CartItem from "../cart-item/CartItem";
+import {LinkContainer} from "react-router-bootstrap";
+import Nav from "react-bootstrap/Nav";
 
 function Cart() {
     const {cartList, clearCart, getTotalPrice} = useCartContext();
@@ -29,9 +31,16 @@ function Cart() {
                         </div>
                     </div>
                 </>
-            : <h3 className="text-center mt-5">Cart is empty</h3>
+            :
+                <div className="row justify-content-md-center">
+                    <div className="col-12">
+                        <h3 className="text-center mt-5">Cart is empty</h3>
+                    </div >
+                        <LinkContainer to="/category/all">
+                            <Button className="btn-lg mt-5 col-5" variant="dark">Continue shopping</Button>
+                        </LinkContainer>
+                </div>
             }
-
         </div>
 
     );
