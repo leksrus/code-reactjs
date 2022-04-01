@@ -3,6 +3,9 @@ import {useEffect, useState} from "react";
 import {getProducts} from "../../helpers/getProducts";
 import ItemList from "../../components/item-list/ItemList";
 import {useParams} from "react-router-dom";
+import Spinner from "react-bootstrap/Spinner";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 function ItemListContainer({title}) {
     const [ loading, setLoading ] = useState(true);
@@ -21,20 +24,25 @@ function ItemListContainer({title}) {
 
     return(
      <Container>
-         <div className="row align-items-start m-3">
-             <div className="col-12">
+         <Row className="m-3">
+             <Col md={12} lg={12} sm={12}>
                  <h2 className="text-center">
                      <em>{title}</em>
                  </h2>
-             </div>
+             </Col>
+         </Row>
+         {       loading ?
+                     <Row className="m-3 justify-content-md-center">
+                         <Spinner animation="border" role="status">
+                             <span className="visually-hidden">Loading...</span>
+                         </Spinner>
+                     </Row>
+             :
+             <Row className="m-3">
+                 <ItemList products={products} />
+             </Row>
 
-         </div>
-         <div className="row align-items-start m-3">
-                 {       loading ? <h2 className="text-center">Loading...</h2>
-                     :
-                     <ItemList products={products} />
-                 }
-         </div>
+         }
      </Container>
  );
 }
