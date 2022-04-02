@@ -3,6 +3,9 @@ import "./ItemDetail.css"
 import ItemCheckout from "../item-checkout/ItemCheckout";
 import {useState} from "react";
 import {useCartContext} from "../../context/CartContext";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card";
 
 
 function ItemDetail({product}) {
@@ -16,27 +19,31 @@ function ItemDetail({product}) {
         }
     };
     return (
-        <div className="row align-items-start">
-            <div className="col-12 mt-2">
-                <div className="card mb-3">
-                    <div className="row g-0">
-                        <div className="col-md-4">
-                            <img className="card-img-top image-detail-250 m-2" src={product.imgSrc}
-                                 alt={product.name}/>
-                        </div>
-                        <div className="col-md-8">
-                            <div className="card-body">
-                                <h5 className="card-title text-center"><b>{product.name}</b></h5>
-                                <p className="card-text text-center">${product.price}</p>
-                                <p className="card-text text-center">{product.description}</p>
-
+        <Row className="mt-2">
+            <Col>
+                <Card>
+                    <Row>
+                        <Col lg={4} md={4} sm={4}>
+                            <Card.Img  className="image-detail-350 m-3" variant="bottom" src={product.imgSrc} alt={product.name} />
+                        </Col>
+                        <Col lg={8} md={8} sm={8}>
+                            <Card.Body>
+                                <div className="d-flex align-items-center justify-content-center mt-3 mb-3">
+                                    <Card.Title as={"h5"}><b>{product.name}</b></Card.Title>
+                                </div>
+                                <div className="d-flex align-items-center justify-content-center mt-3 mb-3">
+                                    <Card.Subtitle className="mb-2 text-muted"> $ {product.price}</Card.Subtitle>
+                                </div>
+                                <div className="d-flex align-items-center justify-content-center mt-3 mb-3">
+                                    {product.description}
+                                </div>
                                 { isCheckout ? <ItemCheckout/> : <ItemCount stock = {product.stock} onAdd = { onAdd} />}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                            </Card.Body>
+                        </Col>
+                    </Row>
+                </Card>
+            </Col>
+        </Row>
     )
 }
 

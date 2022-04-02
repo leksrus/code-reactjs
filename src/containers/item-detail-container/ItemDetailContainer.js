@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {getProducts} from "../../helpers/getProducts";
 import Container from "react-bootstrap/Container";
+import Spinner from "react-bootstrap/Spinner";
 import ItemDetail from "../../components/item-detail/ItemDetail";
 import {useParams} from "react-router-dom";
 
@@ -19,7 +20,10 @@ export function ItemDetailContainer() {
 
     return(
         <Container>
-                {       loading ? <h2 className="text-center">Loading...</h2>
+                {       loading ?
+                    <Spinner animation="border" role="status">
+                       <span className="visually-hidden">Loading...</span>
+                     </Spinner>
                     :
                     <ItemDetail product={product} />
                 }

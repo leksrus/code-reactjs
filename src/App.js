@@ -10,6 +10,7 @@ import About from "./components/about/About";
 import SignIn from "./components/sign-in/SignIn";
 import SignOut from "./components/sign-out/SignOut";
 import CartContextProvider from "./context/CartContext";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
                     <Route path='/cart' element={<Cart />}/>
                     <Route path='/*' element={<Navigate to='/' />} />
                 </Routes>
+                <Footer/>
             </div>
           </CartContextProvider>
       </BrowserRouter>

@@ -7,3 +7,15 @@
     padding-top: 40px;
     padding-bottom: 40px;
 }
+
+.form-input {
+    border: 1px solid #ccc;
+    background-color: #e7e7e7;
+    padding: 12px 20px;
+    border-radius: 4px;
+}
+
+.form-input:focus {
+    background-color: #ddd;
+    outline: none;
+}
