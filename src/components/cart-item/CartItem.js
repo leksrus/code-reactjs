@@ -14,19 +14,22 @@ function CartItem({cartItem}) {
                 <Card border="light" className="mb-3">
                     <Row>
                         <Col lg={4} md={4} sm={4}>
-                            <Card.Img  className="image-size-225" variant="bottom" src={cartItem.imgSrc} alt={cartItem.name} />
+                            <div className="d-flex align-items-center justify-content-center">
+                                <Card.Img  className="image-size-225" variant="bottom" src={cartItem.imgSrc} alt={cartItem.name} />
+                            </div>
                         </Col>
-                        <Col lg={8} md={8} sm={8}>
+                        <Col lg={7} md={7} sm={8} className={"offset-0 offset-md-1 offset-lg-1"}>
                             <Card.Body>
                                 <Card.Title as="h5"><b>{cartItem.name}</b></Card.Title>
                                 <Card.Text>
                                     {cartItem.description}
                                 </Card.Text>
-                                <Card.Text>
-                                    $ {cartItem.price}
-                                </Card.Text>
+                                <Card.Subtitle className="mb-3 text-muted"> $ {cartItem.price}</Card.Subtitle>
                                 <Card.Text>
                                     Quantity: {cartItem.quantity}
+                                </Card.Text>
+                                <Card.Text className="text-muted">
+                                    Total item: $
                                 </Card.Text>
                                 <Button variant="outline-danger" onClick={ () => removeProductFromCart(cartItem) }>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
