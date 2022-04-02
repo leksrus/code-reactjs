@@ -9,7 +9,7 @@ import Row from "react-bootstrap/Row";
 
 function ItemListContainer({title}) {
     const [ loading, setLoading ] = useState(true);
-    const [products, setProds ] = useState([]);
+    const [ products, setProds ] = useState([]);
 
     const { categoryId } = useParams();
 

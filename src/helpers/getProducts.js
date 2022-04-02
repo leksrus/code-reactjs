@@ -12,7 +12,7 @@ const products = [
 
 
 export const getProducts = new Promise((resolve, reject)=>{
-    let condition = true
+    let condition = true;
     if (condition) {
         setTimeout(() => {
             resolve(products)
