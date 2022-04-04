@@ -49,13 +49,13 @@ function Footer() {
                                     <span className="me-1"> contact-info@techmarket.com </span>
                                     <span>
                     <img className="footer-img me-1"
-                                                                          src="images/instagram.png"
+                                                                          src="/images/instagram.png"
                                                                           alt="our instagram"/></span>
                                     <span>
                     <img className="footer-img me-1"
-                                                                         src="images/facebook.ico"
+                                                                         src="/images/facebook.ico"
                                                                          alt="our facebook"/></span>
-                                    <span><img className="footer-img me-1" src="images/whatsapp.png"
+                                    <span><img className="footer-img me-1" src="/images/whatsapp.png"
                                                alt="our whatsapp"/></span
                                     ></small>
                             </div>
