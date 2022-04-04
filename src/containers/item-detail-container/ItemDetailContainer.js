@@ -20,7 +20,7 @@ export function ItemDetailContainer() {
         const productQuery = doc(db, 'products', productId);
 
         getDoc(productQuery).then((productSnapshot) => {
-            setProd(Object.assign({}, productSnapshot.id, productSnapshot.data()));
+            setProd(Object.assign({documentId: productSnapshot.id}, productSnapshot.data()));
         })
             .catch(err => console.log(err))
             .finally(()=> setLoading(false));

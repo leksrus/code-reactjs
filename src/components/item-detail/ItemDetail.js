@@ -12,6 +12,8 @@ function ItemDetail({product}) {
     const [isCheckout, setCheckout] = useState(false);
     const {addToCart} = useCartContext();
 
+    console.log(product)
+
     const onAdd = (counter) => {
         if(product.stock >= counter){
             addToCart(product, counter);
@@ -37,7 +39,7 @@ function ItemDetail({product}) {
                                 <div className="d-flex align-items-center justify-content-center mt-3 mb-3">
                                     {product.description}
                                 </div>
-                                { isCheckout ? <ItemCheckout/> : <ItemCount stock = {product.stock} onAdd = { onAdd} />}
+                                { isCheckout ? <ItemCheckout/> : <ItemCount stock = {product.stock} onAdd = { onAdd } />}
                             </Card.Body>
                         </Col>
                     </Row>
