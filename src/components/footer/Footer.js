@@ -49,13 +49,13 @@ function Footer() {
                                     <span className="me-1"> contact-info@techmarket.com </span>
                                     <span>
                     <img className="footer-img me-1"
-                                                                          src="/images/instagram.png"
+                                                                          src="https://firebasestorage.googleapis.com/v0/b/tech-market-bad6f.appspot.com/o/footer%2Finstagram.png?alt=media&token=9bc0f269-c6b6-4574-b08c-497409fe8f0d"
                                                                           alt="our instagram"/></span>
                                     <span>
                     <img className="footer-img me-1"
-                                                                         src="/images/facebook.ico"
+                                                                         src="https://firebasestorage.googleapis.com/v0/b/tech-market-bad6f.appspot.com/o/footer%2Ffacebook.ico?alt=media&token=4b9085ca-ab93-40af-9ae3-dc6069f69021"
                                                                          alt="our facebook"/></span>
-                                    <span><img className="footer-img me-1" src="/images/whatsapp.png"
+                                    <span><img className="footer-img me-1" src="https://firebasestorage.googleapis.com/v0/b/tech-market-bad6f.appspot.com/o/footer%2Fwhatsapp.png?alt=media&token=ebd2b769-d108-48d1-b99c-f498d86902e1"
                                                alt="our whatsapp"/></span
                                     ></small>
                             </div>
