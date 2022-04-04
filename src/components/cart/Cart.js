@@ -9,7 +9,7 @@ import Col from "react-bootstrap/Col";
 function Cart() {
     const {cartList, clearCart, getTotalPrice} = useCartContext();
     const total = getTotalPrice();
-    console.log(total)
+
     return (
         <Container>
             { cartList.length > 0 ?
