@@ -6,6 +6,8 @@ import {useParams} from "react-router-dom";
 import Spinner from "react-bootstrap/Spinner";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import {getFirestore, collection, getDocs, query, where, documentId} from 'firebase/firestore/lite';
+import {getFirestoreApp} from "../../firebase/firebase-config";
 
 function ItemListContainer({title}) {
     const [ loading, setLoading ] = useState(true);
@@ -14,13 +16,17 @@ function ItemListContainer({title}) {
     const { categoryId } = useParams();
 
     useEffect(()=> {
-        getProducts
-            .then(resp => categoryId ? setProds(resp.filter(x => x.category === categoryId)) : setProds(resp))
+        const db = getFirestore(getFirestoreApp());
+        const productCollection = collection(db, 'products');
+        const firestorePromise = categoryId ?  getDocs(query(productCollection,
+            where('category', '==', categoryId))) : getDocs(productCollection);
+
+        firestorePromise.then((productSnapshot) => setProds(productSnapshot.docs.map(doc => ({documentId: doc.id, ...doc.data() }))))
             .catch(err => console.log(err))
-            .finally(()=> setLoading(false));
+            .finally(()=> {
+                setLoading(false)
+            });
     }, [categoryId]);
-
-
 
     return(
      <Container>

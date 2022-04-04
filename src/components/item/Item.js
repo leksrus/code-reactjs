@@ -6,7 +6,7 @@ import LinkContainer from "react-router-bootstrap/LinkContainer";
 function Item({product}) {
     return   (
         <Col lg={4} md={6} sm={12}>
-            <LinkContainer to={`item-detail/${product.id}`}>
+            <LinkContainer to={`item-detail/${product.documentId}`}>
                 <Card className={"mb-5 transition"}>
                     <div className="d-flex align-items-center justify-content-center">
                         <Card.Img className="image-min-height-315" variant="top" src={product.imgSrc} alt={product.name} />

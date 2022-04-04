@@ -26,19 +26,31 @@ function NavBar(){
                             </LinkContainer>
                             <NavDropdown title="Categories" id="products-category-dropdown">
                                 <LinkContainer to="/category/cpu">
-                                    <NavDropdown.Item href="#action/3.1">CPU</NavDropdown.Item>
+                                    <NavDropdown.Item href="#action/3.1">CPUs</NavDropdown.Item>
+                                </LinkContainer>
+                                <LinkContainer to="/category/gpu">
+                                    <NavDropdown.Item href="#action/3.1">GPUs</NavDropdown.Item>
                                 </LinkContainer>
                                 <LinkContainer to="/category/memory">
                                     <NavDropdown.Item href="#action/3.3">Memory RAM</NavDropdown.Item>
                                 </LinkContainer>
+                                <LinkContainer to="/category/motherboard">
+                                    <NavDropdown.Item href="#action/3.3">Mother Boards</NavDropdown.Item>
+                                </LinkContainer>
                                 <LinkContainer to="/category/ssd">
-                                    <NavDropdown.Item href="#action/3.4">SSD</NavDropdown.Item>
+                                    <NavDropdown.Item href="#action/3.4">SSDs</NavDropdown.Item>
                                 </LinkContainer>
                                 <LinkContainer to="/category/keyboard">
                                     <NavDropdown.Item href="#action/3.5">Keyboards</NavDropdown.Item>
                                 </LinkContainer>
                                 <LinkContainer to="/category/mouse">
                                     <NavDropdown.Item href="#action/3.6">Mouses</NavDropdown.Item>
+                                </LinkContainer>
+                                <LinkContainer to="/category/monitor">
+                                    <NavDropdown.Item href="#action/3.6">Monitors</NavDropdown.Item>
+                                </LinkContainer>
+                                <LinkContainer to="/category/psu">
+                                    <NavDropdown.Item href="#action/3.6">PSUs</NavDropdown.Item>
                                 </LinkContainer>
                                 <NavDropdown.Divider />
                                 <LinkContainer to="/category/all">
