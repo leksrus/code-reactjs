@@ -8,7 +8,6 @@ import Card from "react-bootstrap/Card";
 function CartItem({cartItem}) {
     const {removeProductFromCart, addToCart, removeAllProductQuantity} = useCartContext();
 
-
     return (
         <Row className="align-items-start">
             <Col lg={12} md={12} sm={12}>
@@ -29,7 +28,7 @@ function CartItem({cartItem}) {
                                         </Card.Text>
                                         <Card.Subtitle className="mb-3 text-muted"> $ {cartItem.price}</Card.Subtitle>
                                         <Card.Text className="text-muted">
-                                            Total item: $
+                                            Total item: $ {(cartItem.price * cartItem.quantity).toFixed(2)}
                                         </Card.Text>
                                     </Col>
                                     <Col lg={3} md={3} sm={3}>

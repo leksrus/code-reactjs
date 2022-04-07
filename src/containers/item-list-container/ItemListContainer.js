@@ -11,7 +11,6 @@ import {getFirestoreApp} from "../../firebase/firebase-config";
 function ItemListContainer({title}) {
     const [ loading, setLoading ] = useState(true);
     const [ products, setProds ] = useState([]);
-
     const { categoryId } = useParams();
 
     useEffect(()=> {
