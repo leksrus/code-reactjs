@@ -1,6 +1,6 @@
 import CartList from "../../components/cart/cart-list/CartList";
 import {useCartContext} from "../../context/CartContext";
-import {collection, getFirestore, query, where, documentId, getDocs, addDoc} from "firebase/firestore/lite";
+import {collection, getFirestore, query, where, documentId, getDocs, addDoc, writeBatch } from "firebase/firestore/lite";
 import {getFirestoreApp} from "../../firebase/firebase-config";
 import {useState} from "react";
 import Order from "../../components/Order/Order";
@@ -50,15 +50,30 @@ function CartItemContainer() {
     }
 
     const onCompleteOrder = () => {
-        const db = getFirestore(getFirestoreApp());
-        const ordersCollection = collection(db, 'orders');
+        updateItemStock().then(() => {
+            const db = getFirestore(getFirestoreApp());
+            const ordersCollection = collection(db, 'orders');
 
-        addDoc(ordersCollection, order).then(orderSnapshot => {
-            console.log(orderSnapshot.id);
-            setOrderId(orderSnapshot.id);
-            setMessage('');
-            clearCart();
-        }).catch(error => console.log(error));
+            addDoc(ordersCollection, order).then(orderSnapshot => {
+                console.log(orderSnapshot.id);
+                setOrderId(orderSnapshot.id);
+                setMessage('');
+                clearCart();
+            }).catch(error => console.log(error));
+        }).catch( err => console.log(err));
+    }
+
+    const updateItemStock = async () => {
+        const db = getFirestore()
+        const productCollection = collection (db,'products')
+        const productQuery = query(productCollection, where( documentId(), 'in', cartList.map( x => x.documentId)))
+        const batch = writeBatch(db)
+        await getDocs(productQuery)
+            .then( resp => resp.docs.forEach(res => batch.update( res.ref, {
+                stock: res.data().stock - cartList.find(item => item.documentId === res.id).quantity
+            })))
+            .catch( err => console.log(err));
+       await batch.commit();
     }
 
     return(
