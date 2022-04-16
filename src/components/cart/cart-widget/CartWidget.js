@@ -1,6 +1,6 @@
 import Nav from "react-bootstrap/Nav";
 import {LinkContainer} from "react-router-bootstrap";
-import {useCartContext} from "../../context/CartContext";
+import {useCartContext} from "../../../context/CartContext";
 
 
 function CartWidget() {

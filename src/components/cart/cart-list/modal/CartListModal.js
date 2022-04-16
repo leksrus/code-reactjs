@@ -1,7 +1,7 @@
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Table from "react-bootstrap/Table";
-import {useCartContext} from "../../../context/CartContext";
+import {useCartContext} from "../../../../context/CartContext";
 
 
 function CartListModal({show, onHide, order, onCompleteOrder, message}) {

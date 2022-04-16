@@ -1,5 +1,5 @@
 import Button from "react-bootstrap/Button";
-import {useCartContext} from "../../context/CartContext";
+import {useCartContext} from "../../../context/CartContext";
 import CartItem from "../cart-item/CartItem";
 import LinkContainer from "react-router-bootstrap/LinkContainer";
 import Container from "react-bootstrap/Container";
