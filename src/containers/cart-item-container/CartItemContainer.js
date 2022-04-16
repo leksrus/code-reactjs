@@ -1,17 +1,23 @@
-import CartList from "../../components/cart-list/CartList";
+import CartList from "../../components/cart/cart-list/CartList";
 import {useCartContext} from "../../context/CartContext";
 import {collection, getFirestore, query, where, documentId, getDocs, addDoc} from "firebase/firestore/lite";
 import {getFirestoreApp} from "../../firebase/firebase-config";
 import {useState} from "react";
 import Order from "../../components/Order/Order";
+import {useUserContext} from "../../context/UserContext";
+import { useNavigate} from 'react-router-dom';
 
 function CartItemContainer() {
+    const {user} = useUserContext();
+    const navigate = useNavigate();
     const [order, setOrder] = useState(undefined);
     const [orderId, setOrderId] = useState(undefined);
     const [message, setMessage] = useState('');
     const {cartList, clearCart} = useCartContext();
 
     const onPreCompleteOrder = (total) => {
+        if(!user) navigate("/signin");
+
         setOrder(undefined);
         setMessage('');
         const db = getFirestore(getFirestoreApp());
@@ -22,20 +28,23 @@ function CartItemContainer() {
         getDocs(productQuery).then((productSnapshot) => {
            const storedProducts = productSnapshot.docs.map(doc => ({documentId: doc.id, ...doc.data() }));
             let tempOrder = undefined;
+            let tempItems = [];
 
             for (const product of storedProducts) {
                 const item = cartList.find(x => x.documentId === product.documentId);
 
                 if(item){
                     if(product.stock >= item.quantity)
-                        tempOrder = { buyer: {name: 'test', phone: '11-1111-1111', email: 'test@test'}, items: [], date: new Date(), total: total };
+                        tempOrder = { buyer: {name: user.name, phone: user.phone, email: user.email}, items: [], date: new Date(), total: total };
                     else {
                         setMessage('Unavailable stock. Check you order ');
                         break;
                     }
-                    tempOrder.items.push({id: item.documentId, name: item.name, price: item.price});
+                    tempItems.push({id: item.documentId, name: item.name, price: item.price, quantity: item.quantity});
                 }
             }
+            tempOrder.items.push(...tempItems);
+            console.log(tempOrder);
             setOrder(tempOrder);
         }).catch(error => console.log(error));
     }

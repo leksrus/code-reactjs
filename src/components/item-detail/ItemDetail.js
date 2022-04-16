@@ -39,6 +39,9 @@ function ItemDetail({product}) {
                                 <div className="d-flex align-items-center justify-content-center mt-3 mb-3">
                                     {product.description}
                                 </div>
+                                <div className="d-flex text-muted align-items-center justify-content-center mt-3 mb-3">
+                                    Stock: {product.stock}
+                                </div>
                                 { isCheckout ? <ItemCheckout/> : <ItemCount stock = {product.stock} onAdd = { onAdd } />}
                             </Card.Body>
                         </Col>

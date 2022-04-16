@@ -5,10 +5,13 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
 import HeadLogo from "../head-logo/HeadLogo";
-import CartWidget from "../cart-widget/CartWidget"
+import CartWidget from "../cart/cart-widget/CartWidget"
 import './NavBar.css'
+import {useUserContext} from "../../context/UserContext";
+import SignInWidget from "../sign-in/widget/SignInWidget";
 
 function NavBar(){
+    const {user} = useUserContext();
     return (
         <header>
             <Navbar bg="dark" expand="lg" sticky="top" variant="dark">
@@ -66,12 +69,16 @@ function NavBar(){
                         </Nav>
                         <div className="d-flex">
                             <CartWidget/>
-                            <LinkContainer to="/signin">
-                                <Button className="me-3" variant="outline-primary">Sing in</Button>
-                            </LinkContainer>
-                            <LinkContainer to="/signout">
-                                <Button variant="outline-success">Sing up</Button>
-                            </LinkContainer>
+                                { user ? <SignInWidget/> :
+                                    <>
+                                    <LinkContainer to="/signin">
+                                        <Button className="me-3" variant="outline-primary">Sing in</Button>
+                                    </LinkContainer>
+                                    <LinkContainer to="/signout">
+                                    <Button variant="outline-success">Sing up</Button>
+                                    </LinkContainer>
+                                    </>
+                                }
                         </div>
                     </Navbar.Collapse>
                 </Container>
