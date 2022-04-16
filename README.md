@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# React JS - e-commerce
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Techno Market
 
-## Available Scripts
+## Live Demo
 
-In the project directory, you can run:
+https://leksrus.github.io/coder-reactjs/
 
-### `npm start`
+## Descripción del proyecto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+> El proyecto es un eCommece de componentes para PC desarrollado en ReactJS. En el mismo se podrán adquirir diferentes componentes para el armado de la PC tanto de gamer como común.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    El sitio cuenta con una barra de navegabilidad que nos permite movernos entre las diferentes categorías de productos. Al encontrar un producto que nos guste podemos ver un detalle más específico del mismo, comprar la cantidad deseada hasta el máximo de stock disponible. En caso de que no haya stock el sitio lo indicará y no permitirá agregar un ítem de ese producto al carrito. Para concretar la orden el usuario debe estar logeado en el sitio de lo contrario será redirigido a la pantalla de login.
 
-### `npm test`
+## Secciones
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Home
 
-### `npm run build`
+  > Home de la página. Desplegar todos los productos sin ningún filtro.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Categories
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  > Se pueden filtrar los productos según diferentes categorías. En caso de volver a ver todas las categorías posee la opción `All products`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- About
 
-### `npm run eject`
+  > Descripción de quienes somos.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Cart
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  > Carrito de compra para agregar los productos deseados a comprar.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  - Al tener productos agregados al carrito mostrará un mínimo detalle de dichos productos y la cantidad de unidades. Tendremos la posibilidad de eliminar un producto particular del listado o vaciar todo el carrito de compras.
+  - En esta sección también contamos con un apartado de resumen, el cual nos mostrará la cantidad total de unidades y el importe total a abonar.
+  - Al realizar checkout se validará si usuario esta logeado, de no estarlo se pedirá login.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Sing in
 
-## Learn More
+  > Formulario de login. Es necesario estar logeado para poder concretar la orden de compra.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  - Nota: El usuario para realizar la prueba es `admin@techmarket.com` y password `AdminTechMarket`. El mismo posee un vencimiento
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Sing out
 
-### Code Splitting
+  > Una vez logeado el usuario contara con el menú para poder deslogearse. Este menú no está disponible si usuario no se logeo anteriormente.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+> Nota: Las secciones `Contact` y `Sign up` todavía están en la etapa de desarrollo. Por lo tanto, no están funcionando.
 
-### Analyzing the Bundle Size
+## Librerías
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+A continuación, se detallan librerías utilizados.
 
-### Making a Progressive Web App
+| Library                | README                                                         | Version |
+| ---------------------- | -------------------------------------------------------------- | ------- |
+| react                  | https://es.reactjs.org/docs/getting-started.html               | ^17.0.2 |
+| firebase               | https://firebase.google.com/docs?authuser=0&hl=es              | ^9.6.10 |
+| react-bootstrap        | https://react-bootstrap.github.io/getting-started/introduction | ^2.1.2  |
+| bootstrap              | https://getbootstrap.com/                                      | ^5.1.3  |
+| react-dom              | https://es.reactjs.org/docs/react-dom.html                     | ^17.0.2 |
+| react-router-dom       | https://v5.reactrouter.com/web/guides/quick-start              | ^6.2.2  |
+| react-router-bootstrap | https://github.com/react-bootstrap/react-router-bootstrap      | ^0.26.1 |
+| gh-pages               | https://github.com/gitname/react-gh-pages                      | ^3.2.3  |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Descarga de repositorio y funcionamiento local
 
-### Advanced Configuration
+Clonar el repositorio de Github y instalación de dependencias de la aplicación.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```sh
+git clone https://github.com/leksrus/coder-reactjs.git
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+npm i
+```

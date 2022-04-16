@@ -15,7 +15,7 @@ import UserContextProvider from "./context/UserContext";
 
 function App() {
   return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
           <CartContextProvider>
               <UserContextProvider>
                   <div>
