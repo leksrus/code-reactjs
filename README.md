@@ -9,8 +9,7 @@ https://leksrus.github.io/coder-reactjs/
 ## Descripción del proyecto
 
 > El proyecto es un eCommece de componentes para PC desarrollado en ReactJS. En el mismo se podrán adquirir diferentes componentes para el armado de la PC tanto de gamer como común.
-
-    El sitio cuenta con una barra de navegabilidad que nos permite movernos entre las diferentes categorías de productos. Al encontrar un producto que nos guste podemos ver un detalle más específico del mismo, comprar la cantidad deseada hasta el máximo de stock disponible. En caso de que no haya stock el sitio lo indicará y no permitirá agregar un ítem de ese producto al carrito. Para concretar la orden el usuario debe estar logeado en el sitio de lo contrario será redirigido a la pantalla de login.
+> El sitio cuenta con una barra de navegabilidad que nos permite movernos entre las diferentes categorías de productos. Al encontrar un producto que nos guste podemos ver un detalle más específico del mismo, comprar la cantidad deseada hasta el máximo de stock disponible. En caso de que no haya stock el sitio lo indicará y no permitirá agregar un ítem de ese producto al carrito. Para concretar la orden el usuario debe estar logeado en el sitio de lo contrario será redirigido a la pantalla de login.
 
 ## Secciones
 
