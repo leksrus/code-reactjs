@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/coder-reactjs/static/css/main.9d26e0c0.css",
+    "main.js": "/coder-reactjs/static/js/main.e2ab84c7.js",
+    "static/js/787.8b318121.chunk.js": "/coder-reactjs/static/js/787.8b318121.chunk.js",
+    "static/media/contact-form-background.jpg": "/coder-reactjs/static/media/contact-form-background.ebaa87808eb088670507.jpg",
+    "index.html": "/coder-reactjs/index.html",
+    "main.9d26e0c0.css.map": "/coder-reactjs/static/css/main.9d26e0c0.css.map",
+    "main.e2ab84c7.js.map": "/coder-reactjs/static/js/main.e2ab84c7.js.map",
+    "787.8b318121.chunk.js.map": "/coder-reactjs/static/js/787.8b318121.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9d26e0c0.css",
+    "static/js/main.e2ab84c7.js"
+  ]
+}
