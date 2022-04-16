@@ -19,7 +19,7 @@ https://leksrus.github.io/coder-reactjs/
 
 - Categories
 
-  > Se pueden filtrar los productos según diferentes categorías. En caso de volver a ver todas las categorías posee la opción `All products`
+  > Se pueden filtrar los productos según diferentes categorías. En caso de volver a ver todas las categorías posee la opción `All products`.
 
 - About
 
@@ -37,7 +37,7 @@ https://leksrus.github.io/coder-reactjs/
 
   > Formulario de login. Es necesario estar logeado para poder concretar la orden de compra.
 
-  - Nota: El usuario para realizar la prueba es `admin@techmarket.com` y password `AdminTechMarket`. El mismo posee un vencimiento
+  - Nota: El usuario para realizar la prueba es `admin@techmarket.com` y password `AdminTechMarket`. El mismo posee un vencimiento.
 
 - Sing out
 
