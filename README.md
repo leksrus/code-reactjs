@@ -6,6 +6,10 @@
 
 https://leksrus.github.io/coder-reactjs/
 
+## Video Demo
+
+https://1drv.ms/v/s!Am_HsEUw_zWxgYJkTEMjtfy0X3Ctmw?e=n6atr8
+
 ## Descripción del proyecto
 
 > El proyecto es un eCommece de componentes para PC desarrollado en ReactJS. En el mismo se podrán adquirir diferentes componentes para el armado de la PC tanto de gamer como común.

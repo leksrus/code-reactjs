@@ -32,13 +32,15 @@ function CartItemContainer() {
 
             for (const product of storedProducts) {
                 const item = cartList.find(x => x.documentId === product.documentId);
+                console.log(item)
+                console.log(product)
 
                 if(item){
                     if(product.stock >= item.quantity)
                         tempOrder = { buyer: {name: user.name, phone: user.phone, email: user.email}, items: [], date: new Date(), total: total };
                     else {
                         setMessage('Unavailable stock. Check you order ');
-                        break;
+                        return;
                     }
                     tempItems.push({id: item.documentId, name: item.name, price: item.price, quantity: item.quantity});
                 }
