@@ -48,7 +48,7 @@ function CartListModal({show, onHide, order, onCompleteOrder, message}) {
                     <Button variant="outline-danger" onClick={onHide}>
                         Close
                     </Button>
-                    <Button variant="outline-success" onClick={completeOrder}>
+                    <Button variant="outline-success" onClick={completeOrder} disabled={ !order}>
                         Checkout
                     </Button>
                 </Modal.Footer>
